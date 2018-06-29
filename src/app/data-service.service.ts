@@ -21,8 +21,8 @@ export class DataServiceService {
           this.baseUrl + "postalCodeSearchJSON", 
           {
             params: {
-              postalcode : "9011",
-              maxRows    : "10",
+              postalcode : postalCode,
+              maxRows    : "1",
               username   : this.apiKey
             }
           }
