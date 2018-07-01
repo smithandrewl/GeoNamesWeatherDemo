@@ -8,7 +8,7 @@ import {DataServiceService} from '../data-service.service';
   providers: [DataServiceService]
 })
 export class WeatherLookupComponent implements OnInit {
-  public zipcode = '';
+  public zipcode = '63755';
 
   constructor(private dataService: DataServiceService) { }
 
@@ -21,5 +21,9 @@ export class WeatherLookupComponent implements OnInit {
         alert(info.lat + ', '  + info.lng);
       }
     );
+  }
+
+  onReset() {
+    this.zipcode = '63755';
   }
 }
