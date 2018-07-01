@@ -17,10 +17,9 @@ export class WeatherLookupComponent implements OnInit {
   onClick() {
     this.dataService.getByPostalCode(this.zipcode).subscribe(
       response => {
-        const info = response.json().postalCodes[0];
+        const info = response.postalCodes[0];
         alert(info.lat + ', '  + info.lng);
       }
     );
-
   }
 }

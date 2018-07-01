@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 
 import { WeatherLookupComponent } from './weather-lookup/weather-lookup.component';
 
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -15,7 +15,7 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     FormsModule
   ],
   providers: [],
