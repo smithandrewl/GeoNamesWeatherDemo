@@ -14,14 +14,14 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
   </div>
 
   <div class="form-group row">
-    <div class="col-sm-8">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 ">
       <!--
         Attribution link for regex for zip code validation:
           Link: https://stackoverflow.com/a/2577239
@@ -30,14 +30,19 @@
       <input type="text" required class="form-control" id="txtZipCode" placeholder="Enter a zipcode" [(ngModel)]="zipcode" pattern="^\d{5}(?:[-\s]\d{4})?$"/>
     </div>
 
-    <div class="col-sm-4">
 
-      <div class="btn-group" role="group" aria-label="Click or Cancel">
-        <button type="button" class="btn btn-secondary btn-success" data-toggle="modal" data-target="#modal" (click)="onClick()">
-          Lookup Weather
+  </div>
+  <div class="form-group row">
+    <div class="col-md-3"></div>
+    <div class="col-md-3">
+        <button type="button" class="btn btn-secondary btn-success btn-block" data-toggle="modal" data-target="#modal" (click)="onClick()">
+          Lookup
         </button>
-        <button type="button" class="btn btn-secondary btn-danger" (click)="onReset()">Reset</button>
-      </div>
+
+    </div>
+    <div class="col-md-3">
+      <button type="button" class="btn btn-secondary btn-block btn-danger" (click)="onReset()">Reset</button>
+
     </div>
   </div>
 </div>
