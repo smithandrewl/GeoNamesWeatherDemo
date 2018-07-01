@@ -8,21 +8,19 @@ import {DataServiceService} from '../data-service.service';
   providers: [DataServiceService]
 })
 export class WeatherLookupComponent implements OnInit {
-  public zipcode: string = '';
+  public zipcode = '';
 
   constructor(private dataService: DataServiceService) { }
 
   ngOnInit() {
   }
-  
   onClick() {
-    
     this.dataService.getByPostalCode(this.zipcode).subscribe(
       response => {
-        var info = response.json().postalCodes[0]
-        alert(info.lat + ", "  + info.lng);
+        const info = response.json().postalCodes[0];
+        alert(info.lat + ', '  + info.lng);
       }
     );
-    
+
   }
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Http, Headers, Response} from "@angular/http";
+import {Http, Headers, Response} from '@angular/http';
 import { Observable, Subject, asapScheduler, pipe, of, from, interval, merge, fromEvent } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
@@ -9,20 +9,24 @@ import { HttpModule } from '@angular/http';
 })
 export class DataServiceService {
 
-  private baseUrl: string = "http://api.geonames.org/";
-  private apiKey: string = "smithandrewl";
+  private baseUrl = 'http://api.geonames.org/';
+  private apiKey = 'smithandrewl';
 
     constructor(public http: Http) {
     }
-  
-    public getByPostalCode(postalCode:string):  Observable<Response> {
-      
+
+  /**
+   * Returns information about the specified postal code.
+   * @param {string} postalCode The postal code to search by.
+   * @returns {Observable<Response>} An observable which will contain the response when completed.
+   */
+  public getByPostalCode(postalCode: string):  Observable<Response> {
         return this.http.get(
-          this.baseUrl + "postalCodeSearchJSON", 
+          this.baseUrl + 'postalCodeSearchJSON',
           {
             params: {
               postalcode : postalCode,
-              maxRows    : "1",
+              maxRows    : '1',
               username   : this.apiKey
             }
           }
