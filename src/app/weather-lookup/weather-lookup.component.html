@@ -10,7 +10,33 @@
           </button>
         </div>
         <div class="modal-body">
-          <img class="img img-responsive img-thumbnail" src="https://source.unsplash.com/1600x900/?clouds">
+          <div class="row">
+            <div class="col-sm-3">
+              <b>Location:</b>
+            </div>
+            <div class="col-sm-9">
+              {{city}}, {{state}}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-3">
+              <b>Zip Code:</b>
+            </div>
+            <div class="col-sm-9">
+              {{zipcode}}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-3">
+              <b>GPS:</b>
+            </div>
+            <div class="col-sm-9">
+              {{lat}}, {{lng}}
+            </div>
+          </div>
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

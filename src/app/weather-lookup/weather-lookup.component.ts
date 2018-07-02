@@ -9,6 +9,10 @@ import {DataServiceService} from '../data-service.service';
 })
 export class WeatherLookupComponent implements OnInit {
   public zipcode = '63755';
+  private lat: string;
+  private lng: string;
+  private city: string;
+  private state: string;
 
   constructor(private dataService: DataServiceService) { }
 
@@ -18,7 +22,10 @@ export class WeatherLookupComponent implements OnInit {
     this.dataService.getByPostalCode(this.zipcode).subscribe(
       response => {
         const info = response.postalCodes[0];
-        alert(info.lat + ', '  + info.lng);
+        this.lat = info.lat;
+        this.lng = info.lng;
+        this.city = info.placeName;
+        this.state = info.adminCode1;
       }
     );
   }
