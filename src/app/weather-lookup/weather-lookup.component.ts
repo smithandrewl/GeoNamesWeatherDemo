@@ -25,7 +25,21 @@ export class WeatherLookupComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  private clearModalData() {
+    this.lat = '';
+    this.lng = '';
+    this.city = '';
+    this.state = '';
+    this. clouds = '';
+    this.temperature = '';
+    this.humidity = '';
+    this.stationName = '';
+    this.weatherCondition = '';
+    this.windSpeed = '';
+  }
   onClick() {
+    this.clearModalData();
     this.dataService.getByPostalCode(this.zipcode).subscribe(
       response => {
         const info = response.postalCodes[0];
