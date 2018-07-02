@@ -18,7 +18,7 @@ export class DataServiceService {
   /**
    * Returns information about the specified postal code.
    * @param {string} postalCode The postal code to search by.
-   * @returns {Observable<Response>} An observable which will contain the response when completed.
+   * @returns {Observable<Response>} An observable which will contain the response when complete.
    */
   public getByPostalCode(postalCode: string):  Observable<any> {
         return this.http.get(
@@ -31,5 +31,24 @@ export class DataServiceService {
             }
           }
         );
-    }
+  }
+
+  /**
+   * Returns the most recent weather information for the specified coordinates.
+   * @param {string} lat The latitude of the location
+   * @param {string} lng The longitude of the location
+   * @returns {Observable<any>} An observable which will contain the information when complete.
+   */
+  public getNearByWeather(lat: string, lng: string): Observable<any> {
+    return this.http.get(
+      this.baseUrl + 'findNearByWeatherJSON',
+      {
+        params: {
+          lat: lat,
+          lng: lng,
+          username: this.apiKey
+        }
+      }
+    );
+  }
 }
