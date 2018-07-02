@@ -17,7 +17,7 @@ export class WeatherLookupComponent implements OnInit {
   private temperature: string;
   private humidity: string;
   private stationName: string;
-  private weatherCondition: string;
+  private observation: string;
   private windSpeed: string;
 
 
@@ -35,7 +35,7 @@ export class WeatherLookupComponent implements OnInit {
     this.temperature = '';
     this.humidity = '';
     this.stationName = '';
-    this.weatherCondition = '';
+    this.observation = '';
     this.windSpeed = '';
   }
   onClick() {
@@ -56,7 +56,7 @@ export class WeatherLookupComponent implements OnInit {
             this.temperature = observation.temperature;
             this.humidity = observation.humidity;
             this.stationName = observation.stationName;
-            this.weatherCondition = observation.weatherCondition;
+            this.observation = observation.observation;
             this.windSpeed = observation.windSpeed;
 
           }
