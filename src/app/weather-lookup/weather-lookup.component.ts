@@ -13,6 +13,13 @@ export class WeatherLookupComponent implements OnInit {
   private lng: string;
   private city: string;
   private state: string;
+  private clouds: string;
+  private temperature: string;
+  private humidity: string;
+  private stationName: string;
+  private weatherCondition: string;
+  private windSpeed: string;
+
 
   constructor(private dataService: DataServiceService) { }
 
@@ -26,8 +33,24 @@ export class WeatherLookupComponent implements OnInit {
         this.lng = info.lng;
         this.city = info.placeName;
         this.state = info.adminCode1;
+
+        this.dataService.getNearByWeather(this.lat, this.lng).subscribe(
+          resp => {
+            const observation = resp.weatherObservation;
+
+            this.clouds = observation.clouds;
+            this.temperature = observation.temperature;
+            this.humidity = observation.humidity;
+            this.stationName = observation.stationName;
+            this.weatherCondition = observation.weatherCondition;
+            this.windSpeed = observation.windSpeed;
+
+          }
+        );
       }
     );
+
+
   }
 
   onReset() {
