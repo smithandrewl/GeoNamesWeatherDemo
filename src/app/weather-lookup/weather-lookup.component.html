@@ -73,7 +73,7 @@
     </div>
   </div>
 
-  <form name="zipCodeForm">
+  <form #zipCodeForm="ngForm">
   <div class="form-group row">
     <div class="col-md-3"></div>
     <div class="col-md-6 ">
@@ -90,7 +90,7 @@
   <div class="form-group row">
     <div class="col-md-3"></div>
     <div class="col-md-3">
-        <button type="button" class="btn btn-secondary btn-success btn-block" data-toggle="modal" data-target="#modal" (click)="onClick()">
+        <button type="button" class="btn btn-secondary btn-success btn-block" data-toggle="modal" data-target="#modal" (click)="onClick()" [disabled]="!zipCodeForm.form.valid">
           Lookup
         </button>
 
