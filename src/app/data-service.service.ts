@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class DataServiceService {
 
-  private baseUrl = 'https://api.geonames.org/';
+  private baseUrl = 'http://api.geonames.org/';
   private apiKey = 'smithandrewl';
 
     constructor(public http: HttpClient) {
