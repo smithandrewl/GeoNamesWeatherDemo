@@ -58,6 +58,7 @@ export class WeatherLookupComponent implements OnInit {
             this.stationName = observation.stationName;
             this.observation = observation.observation;
             this.windSpeed = observation.windSpeed;
+            this.zipcode = '';
 
           }
         );
